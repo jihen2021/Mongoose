@@ -13,9 +13,9 @@ connectMongoDb();
 const personR = new person({
 
         id:6,
-        name: 'Aria',
+        name: 'Amna',
         age:28,
-        favoriteFoods:['ravioli','focaccia','tiramisu'],
+        favoriteFoods:['spagetti','pitzaa','tiramisu'],
   });
   personR.save((err) => {
     err ? console.log('Error', err) : console.log('new person inserted succesfully')
@@ -24,34 +24,34 @@ const personR = new person({
    person.create([
         {
             id:9,
-            name: 'Carina',
-            age:27,
-            favoriteFoods:['fritto misto']  
+            name: 'joe',
+            age:30,
+            favoriteFoods:['Coq au Vin']  
         },
         {
             id:8,
             name: 'Elma',
             age:32,
-            favoriteFoods:['acciuga']  
+            favoriteFoods:['Crêpe']  
         },
         {
             id:7,
-            name: 'Sarah',
+            name: 'Nadia',
             age:34,
-            favoriteFoods:['dolci']  
+            favoriteFoods:['Steak tartare']  
         },
       ])
       .then(console.log('Multiple records added succesfully'))
       .catch((err) => console.log('error'))
  //Use model.find() 
 
-person.find({ name: "Andrea" }, function (err, res) {
+person.find({ name: "Nadia" }, function (err, res) {
     err ? console.log('Error', err) : console.log(res)
 })
       
   //Use model.findOne() 
 
- person.findOne({ name: "Elena" }),function(err,res){
+ person.findOne({ name: "Sarra" }),function(err,res){
     err ? console.log('Error', err) : console.log(res)
 }
      
@@ -64,7 +64,7 @@ person.find({ name: "Andrea" }, function (err, res) {
 let PersonId=1
 person.findOne(PersonId).then((res) => {
     console.log(res)
- res.favoriteFoods.push('Hamburger')
+ res.favoriteFoods.push('Steak tartare')
 console.log('your favouriteFoods is updated succesfully')
      res.save()
      })
@@ -72,7 +72,7 @@ console.log('your favouriteFoods is updated succesfully')
 
 
 person.findOneAndUpdate(
-        { name: "Elena" },
+        { name: "Elma" },
         { $set: { age: 20 } },
         { new: true }
       );
@@ -85,13 +85,13 @@ person.findByIdAndRemove({
          })
       
   // Delete Many Documents with model.remove()
-person.remove({ name: "Mary" }, function (err, res) {
+person.remove({ name: "Joe" }, function (err, res) {
         if (err) console.log(err);
         else console.log("all person called Mary are removed");
       });
 
     person
-        .find({ favoriteFoods: "burritos" })
+        .find({ favoriteFoods: "Pitzaa" })
         .sort({ name: 1 })
         .limit(2)
         .select({ age:0 })
@@ -103,4 +103,4 @@ person.remove({ name: "Mary" }, function (err, res) {
         
 
 
-app.listen(port, (err) => err? console.log("failed to run the server"):console.log(`server running on port ${port}!`))
+app.listen(port, (err) => err? console.log("failed"):console.log(`server running on port ${port}!`))
