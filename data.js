@@ -1,32 +1,32 @@
 exports.personData=[
     {
         id:1,
-        name: 'Emilia',
-        age:22,
-        favoriteFoods:['gelato','biscotti']  
+        name: 'Sarra',
+        age:25,
+        favoriteFoods:['sandwich','fich']  
     },
     {
         id:2,
-        name: 'Elena',
+        name: 'Gladis',
         age:23,
-        favoriteFoods:['pizza','crostino','canelloni']  
+        favoriteFoods:['pizza','steak','shrimp']  
     },
     {
         id:3,
-        name: 'Sirena',
-        age:24,
-        favoriteFoods:['risotto','prosciuto','pasta alla carbonara']  
+        name: 'joe',
+        age:29,
+        favoriteFoods:['hamburger','eggs','cheese']  
     },
     {
         id:4,
         name: 'Dario',
-        age:25,
-        favoriteFoods:['bruschetta','insalata']  
+        age:31,
+        favoriteFoods:['cake','spagetti']  
     },
     {
         id:5,
         name: 'Andrea',
         age:26,
-        favoriteFoods:['ciocolattini','polenta']  
+        favoriteFoods:['Le potjevleesch','polenta']  
     },
 ]
